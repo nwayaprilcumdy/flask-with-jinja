@@ -16,17 +16,17 @@
                     </script> 
                 <!-- end of service worker -->
         <!-- start of web manifest -->
-        <link rel="manifest" href="/manifest.json">
+	<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
          <!-- end of web manifest -->
            <!-- theme-color -->
         <meta name="theme-color" content="#fff" />
         <!-- end-theme-color -->
-        <script src="assets/jquery.min.js"></script> 
-        <script src="assets/skel.min.js"></script>
-        <script src="assets/util.js"></script>
-        <script src="assets/respond.min.js"></script>
-        <script src="assets/responsive.js"></script>
-        <link rel="stylesheet" href="assets/main.css" />
+	<script src="{{ url_for('static', filename='jquery.min.js') }}"></script> 
+	<script src="{{ url_for('static', filename='skel.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='util.js') }}"></script>
+	<script src="{{ url_for('static', filename='respond.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='responsive.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
         <title>PWA Fire Codelab Demo</title>
         <meta charset="utf-8">
             
@@ -45,7 +45,7 @@
         
         <![endif]-->
        
-        <link rel="shortcut icon" href="icons/pwafire192white.png">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='pwafire192white.png') }}">
                 
 </head>
 
@@ -56,9 +56,9 @@
                         
 <article id="home" class="panel special" style="display: flex;">
                             
-   <div class="image" style="background-image: url(&quot;images/img1.jpg&quot;); background-position: center center;">
+	<div class="image" style="background-image: {{ url_for('static', filename='img1.jpg') }}; background-position: center center;">
     
-    <img src="images/img1.jpg" alt="" data-position="center center" 
+		<img src="{{ url_for('static', filename='img1.jpg') }}" alt="" data-position="center center" 
                                 
    style="display: none;">
                             
@@ -112,8 +112,8 @@
     
     <article id="work" class="panel secondary inactive" style="display: none;">
            
-        <div class="image" style="background-image: url(&quot;images/img2.jpg&quot;);background-position: center center;">
-        <img src="images/img2.jpg" alt="" data-position="center center" style="display: none;">
+	    <div class="image" style="background-image:{{ url_for('static', filename='img2.jpg') }};background-position: center center;">
+		    <img src="{{ url_for('static', filename='img2.jpg') }}" alt="" data-position="center center" style="display: none;">
         </div> 
         <div class="content">
         <ul class="actions spinX"><li>
@@ -155,8 +155,8 @@
                         
         <article id="about" class="panel secondary inactive" style="display: none;">
                             
-        <div class="image" style="background-image: url(&quot;images/img4.jpg&quot;); background-position: center center;">
-        <img src="images/img4.jpg" alt="" data-position="center center" style="display: none;">
+		<div class="image" style="background-image: {{ url_for('static', filename='img4.jpg') }}; background-position: center center;">
+			<img src="{{ url_name('static', filename='img4.jpg') }}" alt="" data-position="center center" style="display: none;">
          </div>
     
          <div class="content">
@@ -198,9 +198,9 @@
      
       <article id="contact" class="panel secondary inactive" style="display: none;">
                 
-            <div class="image" style="background-image: url(&quot;images/img1.jpg&quot;); background-position: center bottom;">
+	      <div class="image" style="background-image: {{ url_for('static', filename='img1.jpg') }}; background-position: center bottom;">
                 
-            <img src="images/img1.jpg" alt="" data-position="bottom center" style="display: none;">
+		      <img src="{{ url_for('static', filename='img1.jpg') }}" alt="" data-position="bottom center" style="display: none;">
         
             </div><div class="content">
                 
@@ -224,7 +224,7 @@
                 
             </header>
 
-            <form name="contactform" method="post" action="assets/send-email.php">
+	    <form name="contactform" method="post" action="{{ url_for('static', filename='end-email.php') }}">
             
             <div class="field half first">
                                
